@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Jumble json</title>
+</head>
+
+<body>
+
+    <div class="top-container" id="top-container">
+        <div class="container-timer">
+            <h3 class="timer">Time Left</h3>
+            <span id="time-left">GO!</span>
+        </div>
+        <div class="container-level">
+            <h3 class="level-text"></h3>
+        </div>
+        <div class="score-container">
+            <h3 class="score-text">Score</h3>
+            <span id="score-total">0</span>
+        </div>
+    </div>
+
+    <div class="level-container" id="level-container">
+        <div class="select-level" id="select-level1">EASY</div>
+        <div class="select-level" id="select-level2">MEDIUM</div>
+        <div class="select-level" id="select-level3">HARD</div>
+    </div>
+
+    <div class="container">
+        <div class="jumble" id="drag">
+            <!-- inject first sentence here -->
+        </div>
+    </div>
+
+    <button id="check-btn">CHECK</button>
+
+    <img src="img/manga-radial.svg" class="background1"></img>
+
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <div id="result">
+                <img src="/img/home.svg" class="home" alt="home-icon" id="back-btn">
+                <h2 class="result-headline">RESULTS</h2>
+                <!-- counter rollup -->
+
+                <div class="container-score">
+                    <div class="score-view">SCORE:</div>
+                    <div class="counter">0</div>
+                </div>
+
+                <div class="container-bonus">
+                    <div class="bonus-view">BONUS:</div>
+                    <div class="bonus-number">0</div>
+                </div>
+
+                <div class="container-bonusscore">
+
+                    <div class="container-bonus">
+                        <span class="bonus-points" id="bonus1"> +50</span>
+                        <span class="bonus-points" id="bonus2"> +50</span>
+                        <span class="bonus-points" id="bonus3"> +50</span>
+                        <span class="bonus-points" id="bonus4"> +50</span>
+                        <span class="bonus-points" id="bonus5"> +50</span>
+
+                        <div class="container-black-star">
+                            <img src="/img/black-star.svg" id="blackstar1">
+                            <img src="/img/black-star.svg" id="blackstar2">
+                            <img src="/img/black-star.svg" id="blackstar3">
+                            <img src="/img/black-star.svg" id="blackstar4">
+                            <img src="/img/black-star.svg" id="blackstar5">
+                        </div>
+                        <div class="container-star" id="containerStar">
+                            <audio src="snd/star1.mp3" id="audio-star1"></audio>
+                            <audio src="snd/star2.mp3" id="audio-star2"></audio>
+                            <audio src="snd/star3.mp3" id="audio-star3"></audio>
+                            <audio src="snd/star4.mp3" id="audio-star4"></audio>
+                            <audio src="snd/star5.mp3" id="audio-star5"></audio>
+                            <img src="/img/gold-star.svg" class="animate__animated animate__bounce" id="star1">
+                            <img src="/img/gold-star.svg" class="animate__animated animate__bounce" id="star2">
+                            <img src="/img/gold-star.svg" class="animate__animated animate__bounce" id="star3">
+                            <img src="/img/gold-star.svg" class="animate__animated animate__bounce" id="star4">
+                            <img src="/img/gold-star.svg" class="animate__animated animate__bounce" id="star5">
+                        </div>
+                    </div>
+                </div><!-- result slut -->
+
+
+
+
+                <div id="myProgress">
+                    <div id="myBar"></div>
+                </div>
+                <p id="total"></p>
+                <p class="animate__animated animate__flash animate__delay-2s" id="bonusMessage"></p>
+                <div class="container-modal-btn">
+                    <button id="reload-btn" onclick="reloadGame()">TRY AGAIN</button>
+                    <button id="next-btn">NEXT</button>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+        <script src="/js/index.js"></script>
+
+
+</body>
+
+</html>

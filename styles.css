@@ -1,0 +1,460 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: lighter;
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.level-text {
+    font-family: 'Poppins', sans-serif;
+    color: #15263d;
+    font-size: 1.5rem;
+    line-height: 0.5rem;
+}
+
+.container-timer {
+/*     width: 20rem;
+ */    display: flex;
+    flex-direction: column;
+}
+
+.timer {
+    font-family: 'Poppins', sans-serif;
+    color: #15263d;
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    line-height: 0.5rem;
+    z-index: 2;
+}
+
+#time-left{
+    font-family: 'Poppins', sans-serif;
+    color: #1d3352;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-left: 2rem;
+    line-height: 0.5rem;
+    z-index: 2;
+}
+
+.score-text {
+    font-family: 'Poppins', sans-serif;
+    color: #15263d;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    line-height: 0.5rem;
+}
+
+#score-total {
+    font-family: 'Poppins', sans-serif;
+    color: #1d3352;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 0.5rem;
+}
+
+.origin-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+    z-index: 3;
+}
+
+.level-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.select-level {
+    margin-top: 10%;
+    padding: 1rem 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #15263d;
+    background-color: #89b1e6;
+    border-style: none;
+    cursor: pointer;
+
+}
+
+.select-level:hover {
+    background-color: #a4ccff;
+}
+        
+.select-level:active {
+    background-color: #6d8db8;
+}
+
+.container {
+    margin: 10% 0 30% 10%;
+}
+
+.jumble {
+    padding-left: 1px;
+}
+
+.sentence {
+    background-color: #c3d2e7;
+    font-family: 'Roboto', sans-serif;
+    margin: 1rem 0rem 0rem 0rem;
+    padding: 0.8rem 1rem;
+    color: #15263d;
+    width: 40rem;
+    font-size: 23px;
+    cursor: move;
+}
+
+#check-btn {
+    position: fixed;
+    top: 80%;
+    margin-left: 80%;
+    width: 8rem;
+    padding: 1rem 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0f1f36;
+    background-color: #89b1e6;
+    border-style: none;
+    cursor: pointer;
+}
+        
+#check-btn:hover {
+    background-color: #a4ccff;
+}
+        
+#check-btn:active {
+    background-color: #6d8db8;
+}
+
+.start-game {
+    width: 200px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.7rem;
+    padding: 10px;
+    background-color: darkgreen;
+    cursor: pointer;
+    text-align: center;
+}
+
+.level-end {
+    background-color: cornsilk;
+    border: rgb(211, 205, 181);
+    display: flex;
+    flex-direction: column;
+}
+
+#levelUp {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    background-color: rgb(81, 109, 85);
+    border: solid 2px rgb(40, 68, 44);
+    margin: 0px 0 20px 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0, 0, 255, 0.5); /* Black w/ opacity */
+  }
+
+  .background1 {
+    display: none;
+    background: rgb(199, 199, 199);
+    opacity: 0.2;
+    top: -110%;
+    left: -25%;
+    position: fixed;
+    width: 150%;
+    animation: rotate-right 30s infinite linear;
+    z-index: 1;
+}
+  
+  .modal-content {
+    background-color: #1d1d1d;
+    opacity: 0.98;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 5px 15px 15px 15px;
+    border-style: none;
+    border-radius: 5px;
+    width: 50%; /* Could be more or less, depending on screen size */
+    height: 70%;
+    animation: pulse;  /*referring directly to the animation's @keyframe declaration */
+    animation-duration: 0.2s;  /*don't forget to set a duration! */
+  }
+  
+  /* The Home Button */
+  .home {
+    float: right;
+    width: 4%;
+    padding-top: 0.5rem;
+    cursor: pointer;
+    z-index: 9;
+  }
+  
+  .home:hover {
+    filter: opacity(0.5);
+    cursor: pointer;
+  }
+
+  .home-leave {
+    color: rgb(59, 59, 59);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+ .result-headline {
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    color: rgb(212, 211, 211);
+    text-align: center;
+    margin-top: 0;
+}
+
+#message {
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    line-height: 0.7;
+    color: #cccccc;
+    margin-bottom: 1rem;
+    animation: ani2 0.5s ease-in 0.4s forwards;
+}
+
+.container-bonusscore {
+    display: flex;
+    width: 40rem;
+    height: 5rem;
+    padding-bottom: 2rem;
+}
+
+.container-bonus {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#containerStar {
+    display: flex;
+    position: relative;
+}
+
+.container-black-star {
+    display: flex;
+    position: relative;
+    width:fit-content;
+    left: 0;
+    top: 0;
+}
+
+#blackstar1, #blackstar2, #blackstar3, #blackstar4, #blackstar5 {
+    visibility: visible;
+    width: 7.5%;
+    margin: 0rem 0rem 0rem 3rem;
+}
+
+#star1, #star2, #star3, #star4, #star5 {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: -2.9rem;
+    width: 7.5%;
+    position: relative;
+    margin: 0rem 0rem 0rem 3rem;
+    animation: heartBeat 1s;
+    animation-delay: 1s;
+    z-index: 2;
+}
+
+.bonus-points {
+    visibility: hidden;
+    color: #cccccc;
+    font-size: 1.5rem;
+    font-family: 'Oswald', sans-serif;
+    margin: 0rem 0.2rem 0rem 3rem;
+    opacity: 0;
+    animation: fade 1.5s linear forwards 1s;
+    cursor: default;
+}
+
+.container-score {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.score-view {
+    color: #cccccc;
+    font-size: 2.5rem;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 0rem;
+    margin-left: 3rem;
+    z-index: 1;
+}
+
+.counter {
+    color: #cccccc;
+    font-size: 2.5rem;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 0rem;
+    margin-left: 1rem;
+}
+
+.container-bonus {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.bonus-view {
+    color: #cccccc;
+    font-size: 2.5rem;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 0rem;
+    margin-left: 3rem;
+    z-index: 1;
+}
+
+.bonus-number {
+    color: #cccccc;
+    font-size: 2.5rem;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 0rem;
+    margin-left: 1rem;
+}
+
+#myProgress {
+    width: 90%;
+    margin-left: 1.5rem;
+    background-color: rgb(59, 59, 59);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px #1d1d1d;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Oswald', sans-serif;
+    color: #cccccc;
+    animation-delay: 1s;
+  }
+  
+#myBar {
+    width: 1%;
+    height: 20px;
+    font-size: 2.5rem;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(0, 0, 0, 0.8);
+    background-image: linear-gradient(to bottom, #00ffdd, #008081);
+  }
+
+#total {
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    color: #cccccc;
+    line-height: 0.7;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    animation: ani1 0.5s ease-in 0.2s forwards;
+} 
+
+#message-start {
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1;
+    color: #cccccc;
+    margin-bottom: 1rem;
+    animation: ani2 0.5s ease-in 0.4s forwards;
+}
+
+#message-leave {
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1;
+    color: #cccccc;
+    animation: ani2 1s ease-in 0.4s forwards;
+}
+
+#bonusMessage {
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: #ffcd6f;
+    line-height: 0.7;
+}
+
+.container-modal-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#reload-btn {
+    visibility: hidden;
+    position: relative;
+    background-color: #0b597e;
+    color: rgb(226, 226, 226);
+    width: 10rem;
+    height: 3.5rem;
+    outline: none;
+    border-style: none;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: rgba(255, 255, 255, 1);
+}
+
+#next-btn {
+    visibility: hidden;
+    position: relative;
+    background-color: #0b597e;
+    color: rgb(226, 226, 226);
+    width: 10rem;
+    height: 3.5rem;
+    outline: none;
+    border-style: none;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: rgba(255, 255, 255, 1);
+}
+
+#reload-btn:hover, #next-btn:hover {
+    background-color: #1281b4;
+}
+
+#reload-btn:active, #next-btn:active {
+    background-color: #094a68;
+}
+
+@keyframes rotate-right{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes fade {
+    0% { opacity: 0;}
+    50% { opacity: 1;}
+    75% { opacity: 0.5;}
+    100% {opacity: 0; transform: translateY(-50px);}
+  } 
